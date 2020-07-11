@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { PanZoom } from 'react-easy-panzoom';
 import './App.css';
 
+import Grid from './components/Grid/Grid';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<PanZoom
+				minZoom={1}
+				maxZoom={1}
+				boundaryRatioVertical={0.6}
+				boundaryRatioHorizontal={0.6}
+				enableBoundingBox
+			>
+				<Grid />
+			</PanZoom>
+		</div>
+	);
 }
 
 export default App;
